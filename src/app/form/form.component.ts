@@ -33,8 +33,8 @@ export class FormComponent implements OnInit {
     name: ['', Validators.required],
       gender: ['female', Validators.required],
       email: [''],
-      roomTypeOption: ['One Person Room', Validators.required],
-      numberGuests: ['1', Validators.required],
+      roomTypeOptions: ['', Validators.required],
+      numberGuests: ['3', Validators.required],
       date: ['', Validators.required],
       freePickup: ['Yes Please! - Pick me up on arrival', Validators.required],
       flightNumber: ['', Validators.required],
@@ -48,7 +48,7 @@ export class FormComponent implements OnInit {
       name: [''],
       gender: ['female'],
       email: [''],
-      roomTypeOption: ['One Person Room'],
+      roomTypeOptions: [''],
       numberGuests: ['1'],
       date: [''],
       freePickup: ['Yes Please! - Pick me up on arrival'],
@@ -76,7 +76,7 @@ export class FormComponent implements OnInit {
       };
       this.http.post(this.url, body, httpOptions).subscribe(() => {}, (err) => {});
     } else {
-      console.log('form is invaild');
+      console.log('form is invalid');
     }
   }
 

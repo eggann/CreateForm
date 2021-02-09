@@ -30,7 +30,7 @@
           <select [(ngModel)]="selectedCurrency" class="form-control" formControlName="roomTypeOptions">
             <option
               *ngFor="let roomTypeOption of roomTypeOptions | keyvalue"
-              value="{{roomTypeOption.key}}">
+              value="{{roomTypeOption.value}}">
                   {{roomTypeOption.value}}
             </option>
           </select>
