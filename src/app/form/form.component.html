@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <br><br>
+      <h3>Hotel Booking</h3>
+      <hr>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="" class="title">Name</label>
+          <input type="text" id="Name" class="form-control" placeholder="Egg Yeh" formControlName="name">
+        </div>
+        <br>
+        <label for="" class="title">Gender</label>
+        <br>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" formControlName="gender" [value]="gender" class="form-check-input">
+            {{ gender }}
+          </label>
+        </div>
+        <br>
+        <div>
+          <label for="email" class="title">E-mail</label>
+          <input type="email" id="Email" class="form-control" placeholder="eggann47@gmail.com" formControlName="email">
+        </div>
+        <br>
+        <div>
+          <label for="" class="title">Room Type</label> <br>
+          <select [(ngModel)]="selectedCurrency" class="form-control" formControlName="roomTypeOptions">
+            <option
+              *ngFor="let roomTypeOption of roomTypeOptions | keyvalue"
+              value="{{roomTypeOption.key}}">
+                  {{roomTypeOption.value}}
+            </option>
+          </select>
+          </div>
+          <br>
+          <div>
+            <label for="" class="title">Number Guests</label>
+            <input type="number" id="number" class="form-control" formControlName="numberGuests">
+          </div>
+          <br>
+          <div>
+            <label for="" class="title">Arrival Date</label>
+            <div class="row">
+              <div class="col">
+                <input type="date" id="date" class="form-control" formControlName="date">
+              </div>
+              <!-- <div class="col">
+                <input type="time" id="time" class="form-control" formControlName="time">
+              </div> -->
+            </div>
+          </div>
+          <br>
+          <div>
+            <label for="" class="title">Free Pickup?</label> <br>
+            <div class="radio" *ngFor="let freePickup of freePickups">
+              <label>
+                <input type="radio" formControlName="freePickup" [value]="freePickup" class="form-check-input">
+                {{ freePickup }}
+              </label>
+            </div>
+          </div>
+          <br>
+          <div>
+            <label for="" class="title">Flight Number</label>
+            <input type="number" id="flight" class="form-control" formControlName="flightNumber">
+          </div>
+          <br>
+          <div>
+            <label for="" class="title">Special Requests</label><br>
+            <textarea id="request" class="form-control" formControlName="specialRequest"></textarea>
+          </div>
+          <br>
+          <div>
+            <button class="btn btn-primary" type="submit">Submit</button> |
+            <button class="btn btn-danger" type="reset">Cancel</button>
+          </div>
+          <br><br>
