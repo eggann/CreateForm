@@ -15,7 +15,8 @@ export class FormComponent implements OnInit {
   genders = ['male', 'female', 'other'];
   freePickups = ['Yes Please! - Pick me up on arrival', 'No Thanks! - I will make my own way there'];
   roomTypeOptions = [RoomType.One, RoomType.Two, RoomType.Three, RoomType.Four];
-  // selectedCurrency: RoomType;
+  selectedCurrency: RoomType;
+
   // url = 'https://docs.google.com/forms/d/e/1FAIpQLSdzJ1qYADgvYhXTa1eCbeFGPptKSyxm6aon6p3ILFQHZ2Suvg/viewform';
 
   // fieldMapping = {
@@ -46,13 +47,13 @@ export class FormComponent implements OnInit {
     private formBuilder: FormBuilder, private http: HttpClient
   ) {
     this.form = this.formBuilder.group({
-      name: [''],
-      gender: ['female'],
-      email: [''],
-      roomTypeOptions: [''],
-      numberGuests: [''],
-      date: [''],
-      freePickup: ['Yes Please! - Pick me up on arrival'],
+      name: ['', Validators.required],
+      gender: ['female', Validators.required],
+      email: ['', Validators.required],
+      roomTypeOptions: ['', Validators.required],
+      numberGuests: ['', Validators.required],
+      date: ['', Validators.required],
+      freePickup: [''],
       flightNumber: [''],
       specialRequest: [''],
     });
@@ -65,7 +66,7 @@ export class FormComponent implements OnInit {
     const value = this.form.value
     console.log(value);
     await handleSubmit(value);
-    this.form.reset({});
+    this.form.reset();
   }
 
   // save(){

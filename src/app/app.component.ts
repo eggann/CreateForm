@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent {
 
-  constructor(private fb: FormBuilder, private http: HttpClient){}
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   title = 'CreateForm';
   url = 'https://docs.google.com/forms/d/e/1FAIpQLSdzJ1qYADgvYhXTa1eCbeFGPptKSyxm6aon6p3ILFQHZ2Suvg/viewform';

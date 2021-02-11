@@ -13,5 +13,6 @@ const main = async () => {
     const str_query = stringify(query)
     console.log(str_query);
 };
+// 幫我關小視窗
 
 main().catch(err => console.log(err));
